@@ -1,0 +1,37 @@
+﻿@model Student
+<form asp-action="Edit" asp-controller="Admin" method="post">
+    <input type="hidden" name="Id" value="@Model.Id" />
+    <table>
+        <tr>
+            <td>姓名</td>
+            <td><input type="text" name="Name" value="@Model.Name" /></td>
+        </tr>
+        <tr>
+            <td>性别</td>        
+            <td>
+                <select name="Sex" value="@Model.Sex">
+                    <option>男</option>
+                    <option>女</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>年龄</td>
+            <td><input type="text" name="Age" value="@Model.Age" /></td>
+        </tr>
+        <tr>
+            <td>班级</td>
+            <td><input type="text" name="Class" value="@Model.Class" /></td>
+        </tr>
+        <tr>
+            <td>家庭住址</td>
+            <td><input type="text" name="Address" value="@Model.Address" /></td>
+        </tr>
+        <tr>
+            <td>个人备注</td>
+            <td><input type="text" name="Note" value="@Model.Note" /></td>
+        </tr>
+    </table> 
+    <p><input type="submit" value="修改" />
+       <a asp-action="Index" asp-controller="Home">取消</a></p>
+</form>

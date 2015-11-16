@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Student>
+<table class="table">
+    <thead>
+        <tr>
+            <th>学号</th>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>年龄</th>
+            <th>班级</th>
+            <th>家庭住址</th>
+            <th>个人备注</th>
+            <th>操作</th>
+            @*@if (User.IsSignedIn())
+            {
+                <th>操作</th>
+
+            }*@
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <th>@x.Id</th>
+                <th>@x.Name</th>
+                <th>@x.Sex</th>
+                <th>@x.Age</th>
+                <th>@x.Class</th>
+                <th>@x.Address</th>
+                <th>@x.Note</th>
+                @if (User.IsSignedIn())
+                {
+                    <th>
+                        <a asp-action="Edit" asp-controller="Admin" asp-route-id="@x.Id">修改</a>
+                        <a href="javascript:remove(@x.Id)">删除</a>
+                    </th>
+
+                }
+            </tr>
+
+        }
+    </tbody>
+</table>
+
+@Html.MakePager("pager-item","active","pager")
+@if (User.IsSignedIn())
+{
+    <form asp-action="Delete" asp-controller="Admin" method="post" id="frmDelete">
+        <input type="hidden" id="Id" name="id" />
+    </form>
+    <script>
+        function remove(id)
+        {
+            var jug=confirm("确认删除吗？")
+            if (jug == true) {
+                $('#Id').val(id);
+                $('#frmDelete').submit();
+
+            }
+        }
+    </script>
+}
