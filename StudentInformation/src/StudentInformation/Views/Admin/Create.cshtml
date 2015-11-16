@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "添加学生信息";
+}
+
+<h2>@ViewBag.Title</h2>
+<form asp-action="Create" asp-controller="Admin" method="post">
+    <table>
+        <tr>
+            <td class="row-title">姓名</td>
+            <td><input type="text" name="Name" /></td>
+        </tr>
+        <tr>
+            <td class="row-title">性别</td>
+            @*<td><input type="text" name="Sex" /></td>*@
+            <td><select name="Sex">
+                <option>男</option>
+                <option>女</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td class="row-title">年龄</td>
+            <td><input type="text" name="Age" /></td>
+        </tr>
+        <tr>
+            <td class="row-title">班级</td>
+            <td><input type="text" name="Class" /></td>
+        </tr>
+        <tr>
+            <td class="row-title">家庭住址</td>
+            <td><input type="text" name="Address" /></td>
+        </tr>
+        <tr>
+            <td class="row-title">个人备注</td>
+            <td><input type="text" name="Note" /></td>
+        </tr>       
+    </table>
+    <p>
+       <input type="submit" class="btn inverse" value="创建" />
+       <a asp-action="Index" asp-controller="Home">取消</a>
+    </p>
+</form>
