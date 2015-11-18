@@ -7,7 +7,7 @@ using StudentInformation.Models;
 
 namespace StudentInformation.Controllers
 {
-    public class BaseController : BaseController<User,StudentContext,string>
+    public class BaseController : BaseController<StudentContext, User, string>
     {
     }
 }

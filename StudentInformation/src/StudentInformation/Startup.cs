@@ -31,6 +31,8 @@ namespace StudentInformation
 
             //添加mvc服务
             services.AddMvc();
+
+            services.AddSmartUser<User, string>();
         }
 
         public async void Configure(IApplicationBuilder app)

@@ -53,7 +53,7 @@ namespace StudentInformation.Controllers
         [Authorize]
         public IActionResult Modify()
         {
-            return View(CurrentUser);
+            return View(User.Current);
         }
         [HttpPost]
         [Authorize]
@@ -61,7 +61,7 @@ namespace StudentInformation.Controllers
         {
             if (confirmpwd != newpwd)
                 return Content("两次输入密码不一致，请检查后重新输入");
-            var result = await UserManager.ChangePasswordAsync(await UserManager.FindByIdAsync(CurrentUser.Id), currentpwd, newpwd);
+            var result = await UserManager.ChangePasswordAsync(await UserManager.FindByIdAsync(User.Current.Id), currentpwd, newpwd);
 
             if (!result.Succeeded)
                 return Content(result.Errors.First().Description);
