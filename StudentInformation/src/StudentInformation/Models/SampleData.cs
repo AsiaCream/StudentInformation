@@ -35,8 +35,8 @@ namespace StudentInformation.Models
                     Age = 20,
                     Class = "软件121",
                     Address = "地球村",
-                    Note="无"
-                    
+                    Note="无",
+                    Phone=18888888888,                
                 });
                 db.Students.Add(new Student
                 {
@@ -45,7 +45,8 @@ namespace StudentInformation.Models
                     Age = 25,
                     Class = "软件122",
                     Address = "克山火车站旁边小卖部",
-                    Note = "无"
+                    Note = "无",
+                    Phone=13333333333,
                 });
                 db.Students.Add(new Student
                 {
@@ -54,7 +55,8 @@ namespace StudentInformation.Models
                     Age = 30,
                     Class = "软件123",
                     Address = "大连华信软件公司",
-                    Note = "无"
+                    Note = "无",
+                    Phone=13777777777,
                 });
                 db.SaveChanges();
             }

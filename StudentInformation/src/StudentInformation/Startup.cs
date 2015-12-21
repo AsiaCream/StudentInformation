@@ -22,7 +22,7 @@ namespace StudentInformation
             //添加entity framework服务
             services.AddEntityFramework()
                 .AddSqlite()
-                .AddDbContext<StudentContext>(x => x.UseSqlite("Data source=" + appEnv.ApplicationBasePath + "/student.db"));
+                .AddDbContext<StudentContext>(x => x.UseSqlite("Data source=" + appEnv.ApplicationBasePath + "/Database/student.db"));
 
             //添加identity服务
             services.AddIdentity<User, IdentityRole>()

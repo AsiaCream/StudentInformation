@@ -14,5 +14,6 @@ namespace StudentInformation.Models
         public string Class { get; set; }
         public string Address { get; set; }
         public string Note { get; set; }
+        public long Phone { get; set; }
     }
 }
